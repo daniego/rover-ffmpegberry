@@ -1,0 +1,17 @@
+{
+  "uploadOnSave": true,
+  "useAtomicWrites": true,
+  "deleteLocal": false,
+  "hostname": "192.168.2.6",
+  "port": "22",
+  "target": "/srv/rover360",
+  "ignore": [
+    ".remote-sync.json",
+    ".git/**"
+  ],
+  "username": "pi",
+  "watch": [],
+  "transport": "scp",
+  "keyfile": "/Users/dfloris/.ssh/id_rsa"
+}
+ 
