@@ -1,4 +1,4 @@
-FROM armv7/armhf-ubuntu:16.04
+FROM ubuntu:xenial
 MAINTAINER Daniel Floris <daniel.floris@gmail.com>
 
 RUN apt-get update
