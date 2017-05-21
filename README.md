@@ -1,4 +1,9 @@
 # rover-ffmpegberry
 
+docker build -t ffberry .
 
-wget http://media.philstar.com/images/the-philippine-star/business/business-main/20140711/SSS-logo-3.jpg ffmpeg -i SSS-logo-3.jpg -i xmap_thetaS_1920x960v3.pgm -i ymap_ThetaS_1920x960v3.pgm -lavfi remap out.png
+/root/ffmpeg_sources/ffmpeg/ffmpeg -i fisheye_grid_input.jpg -i fisheye_grid_xmap.pgm -i fisheye_grid_ymap.pgm -lavfi remap out.png
+
+docker run -it ffmpeg bash
+
+docker run -it --device=/dev/bus/usb/`lsusb | grep Ricoh|awk {'print $2'}`/`lsusb | grep Ricoh|awk {'print $4'}|sed 's/:$//'` -p 8080:8080 --cap-add=ALL --privileged -v /lib/modules:/lib/modules -v=/dev:/dev --entrypoint="bash" ffmpeg
